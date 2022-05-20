@@ -1,4 +1,4 @@
-# getx_tutorial
+# dokuman_deneme
 
 A new Flutter project.
 

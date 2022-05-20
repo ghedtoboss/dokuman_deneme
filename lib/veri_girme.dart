@@ -517,7 +517,7 @@ class _GozlemPageState extends State<GozlemPage> {
                                 _firestore
                                     .collection('Çalışanlar')
                                     .doc(currentUserId)
-                                    .collection("rapor")
+                                    .collection("Gözlem Raporu")
                                     .add(raporData);
                               })),
                     ),

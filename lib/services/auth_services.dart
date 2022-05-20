@@ -22,10 +22,12 @@ class AuthService {
     var user = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
 
-    await _firestore
-        .collection("Çalışanlar")
-        .doc(name)
-        .set({"Ad soyad": name, "email": email, 'şifre': password});
+    if (user.user != null) {
+      await _firestore
+          .collection("Çalışanlar")
+          .doc(user.user!.uid)
+          .set({"Ad soyad": name, "email": email, 'şifre': password});
+    }
 
     return user.user;
   }

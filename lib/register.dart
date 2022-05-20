@@ -178,6 +178,11 @@ class _RegisterPageState extends State<RegisterPage> {
                                   _emailController.text,
                                   _passwordController.text)
                               .then((value) {
+                            if (value == null) {
+                              print("Hata Mesajı");
+                              // kullanıcı kayıt olamadı ana ekrana yönlendirilmemeli
+                              return null;
+                            }
                             return Navigator.push(
                                 context,
                                 MaterialPageRoute(

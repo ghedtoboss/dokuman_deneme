@@ -21,6 +21,8 @@ class _GozlemPageState extends State<GozlemPage> {
   StatusService _statusService = StatusService();
   TextEditingController statusController = TextEditingController();
 
+  String currentUserId = FirebaseAuth.instance.currentUser!.uid;
+
   bool _isSelectedC1 = false;
   bool _isSelectedC2 = false;
   List<String> _durumlar = [
@@ -511,13 +513,10 @@ class _GozlemPageState extends State<GozlemPage> {
                                   'Sınıf': _secilenDurum.toString(),
                                   'Tarih': DateTime.now(),
                                   'Öneri': textController5.text,
+                                  'Gönderen kişi': currentUserId
                                 };
-                                String currentUserId =
-                                    FirebaseAuth.instance.currentUser!.uid;
                                 _firestore
-                                    .collection('Çalışanlar')
-                                    .doc(currentUserId)
-                                    .collection("Gözlem Raporu")
+                                    .collection('Gözlem Raporu')
                                     .add(raporData);
                               })),
                     ),

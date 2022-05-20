@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "101486068607",
+    "project_id": "dokumandenemesi",
+    "storage_bucket": "dokumandenemesi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101486068607:android:d634886d3145ba4a2b104a",
+        "android_client_info": {
+          "package_name": "com.example.getx_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101486068607-o6o8711apkuaqufrp237k0o2eu9grkck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCI1oh2kJGpRu7hesbPLZQo7kSZPMne2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101486068607-o6o8711apkuaqufrp237k0o2eu9grkck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

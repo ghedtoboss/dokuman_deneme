@@ -504,21 +504,6 @@ class _GozlemPageState extends State<GozlemPage> {
                               ),
                               icon: Icon(Icons.send_rounded),
                               onPressed: () async {
-                                FirebaseFirestore.instance
-                                    .collection("Rapor")
-                                    .add({
-                                  'Ad soyad': textController4.text,
-                                  'Gözlem açıklaması': textController3.text,
-                                  'Konum': textController2.text,
-                                  'Sınıf': _secilenDurum.toString(),
-                                  'Tarih': DateTime.now(),
-                                  'Öneri': textController5.text,
-                                }).then((_) {
-                                  print("collection created");
-                                }).catchError((_) {
-                                  print("an error occured");
-                                });
-
                                 Map<String, dynamic> raporData = {
                                   'Ad soyad': textController4.text,
                                   'Gözlem açıklaması': textController3.text,
@@ -527,10 +512,13 @@ class _GozlemPageState extends State<GozlemPage> {
                                   'Tarih': DateTime.now(),
                                   'Öneri': textController5.text,
                                 };
-
-                                await raporRef
-                                    .doc(textController4.text)
-                                    .set(raporData);
+                                String currentUserId =
+                                    FirebaseAuth.instance.currentUser!.uid;
+                                _firestore
+                                    .collection('Çalışanlar')
+                                    .doc(currentUserId)
+                                    .collection("rapor")
+                                    .add(raporData);
                               })),
                     ),
                   )

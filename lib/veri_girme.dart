@@ -511,7 +511,7 @@ class _GozlemPageState extends State<GozlemPage> {
                                   'Gözlem açıklaması': textController3.text,
                                   'Konum': textController2.text,
                                   'Sınıf': _secilenDurum.toString(),
-                                  'Tarih': DateTime.now(),
+                                  'Tarih': date,
                                   'Öneri': textController5.text,
                                   'Gönderen kişi': currentUserId
                                 };
